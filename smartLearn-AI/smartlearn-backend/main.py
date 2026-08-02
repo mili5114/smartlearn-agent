@@ -91,7 +91,7 @@ def chat(body: ChatRequest):
 
     all_page_numbers = {p["page"] for p in pages}
     cited = {
-        int(n) for n in re.findall(r"\[Page\s*(\d+)\]", answer) if int(n) in all_page_numbers
+        int(n) for n in re.findall(r"[\[【]Page\s*(\d+)[\]】]", answer) if int(n) in all_page_numbers
     }
 
     return {
