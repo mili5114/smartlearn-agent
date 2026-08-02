@@ -39,6 +39,11 @@ def root():
     return {"message": "SmartLearn Lite API is running"}
 
 
+@app.get("/health")
+def health():
+    return {"ok": True}
+
+
 @app.post("/upload")
 async def upload(
     chat_id: str = Query(...),
